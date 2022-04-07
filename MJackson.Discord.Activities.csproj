@@ -119,17 +119,16 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Bot\Activities\RetrieveUserById.cs" />
         <Compile Include="Bot\CommandHandler.cs" />
-        <Compile Include="Bot\Startup.cs" />
+        <Compile Include="Bot\BotHandler.cs" />
+        <Compile Include="Bot\Modules\Modules.cs" />
         <Compile Include="DiscordActivities.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>
       <None Include="App.config" />
       <None Include="packages.config" />
-    </ItemGroup>
-    <ItemGroup>
-      <Folder Include="Bot\Activities" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -3,7 +3,9 @@ using System.Activities;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 using Discord.WebSocket;
+using MJackson.Discord.Activities.Bot;
 
 namespace MJackson.Discord.Activities
 {
@@ -23,15 +25,20 @@ namespace MJackson.Discord.Activities
         public OutArgument<DiscordSocketClient> DiscordClient { get; set; }*/
 
 
-        protected override void Execute(CodeActivityContext context)
+        protected override async void Execute(CodeActivityContext context)
         {
             // Get the application token
             var token = ClientToken.Get(context);
 
             //Get command prefix for bot to respond to
             var prefix = ClientPrefix.Get(context);
+
+            var botHandler = new BotHandler();
+            await botHandler.StartAsync(token);
+            _client = BotHandler.Client;
             
-            
+            await Task.Delay(-1);
+
             
         }
     }
