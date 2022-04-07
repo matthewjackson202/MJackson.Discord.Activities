@@ -17,12 +17,18 @@ namespace MJackson.Discord.Activities.Bot.Activities
         public InArgument<string> ClientPrefix { get; set; }
         
         [Category("Output")]
-        public OutArgument<DiscordSocketClient> FirstNumber { get; set; }
+        public OutArgument<DiscordSocketClient> DiscordClient { get; set; }
         
         
         protected override void Execute(CodeActivityContext context)
         {
-            Console.WriteLine("yep?");
+            // Get the application token
+            var token = ClientToken.Get(context);
+            
+            //Get command prefix for bot to respond to
+            var prefix = ClientPrefix.Get(context);
+
+
         }
     }
 }
