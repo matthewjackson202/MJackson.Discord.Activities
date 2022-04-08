@@ -120,9 +120,7 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Bot\Activities\RetrieveUserById.cs" />
-        <Compile Include="Bot\CommandHandler.cs" />
         <Compile Include="Bot\BotHandler.cs" />
-        <Compile Include="Bot\Modules\Modules.cs" />
         <Compile Include="DiscordActivities.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>

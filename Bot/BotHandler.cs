@@ -24,8 +24,6 @@ namespace MJackson.Discord.Activities.Bot
             
             //Login, set the handler, and setup the commands
             await Client.LoginAsync(TokenType.Bot, token);
-            var handler = new CommandHandler(Client, commandService);
-            await handler.InstallCommandsAsync();
             
             // Waits until the bot is online to proceed
             await Client.StartAsync();
