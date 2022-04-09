@@ -16,12 +16,16 @@ namespace MJackson.Discord.Activities.Bot
         public async Task StartAsync(string token)
         {
             // Setup a new client
-            Client = new DiscordSocketClient();
+            Client = new DiscordSocketClient(new DiscordSocketConfig()
+            {
+                AlwaysDownloadUsers = true,
+                GatewayIntents = GatewayIntents.All
+            });
             // Spawn CommandService to manage the commands
             var commandService = new CommandService();
             // Log event being handled by Log method 
             Client.Log += Log;
-            
+
             //Login, set the handler, and setup the commands
             await Client.LoginAsync(TokenType.Bot, token);
             
