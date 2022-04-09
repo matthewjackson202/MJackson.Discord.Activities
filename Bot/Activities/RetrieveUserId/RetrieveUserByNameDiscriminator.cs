@@ -26,14 +26,15 @@ namespace MJackson.Discord.Activities.Bot.Activities.RetrieveUserId
             
             foreach (var guild in bot.Guilds)
             {
+                // Go through all guilds looking for the user 
                 var users = guild.Users.Where(x => x.Username == UserName.Get(context))
                     .Where(x => x.Discriminator == UserDiscriminator.Get(context)).ToList();
-                if (users.Any())
-                {
-                    UserId.Set(context, users.First().Id.ToString());
-                    return;
-                }
+                if (!users.Any()) continue;
+                // Set context and return
+                UserId.Set(context, users.First().Id.ToString());
+                return;
             }
+            // Nothing was returned therefore it is null.
             UserId.Set(context, null);
         }
     }
