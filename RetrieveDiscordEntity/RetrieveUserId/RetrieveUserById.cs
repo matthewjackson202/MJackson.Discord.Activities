@@ -3,8 +3,9 @@ using System.Activities;
 using System.ComponentModel;
 using System.Threading.Tasks;
 using Discord;
+using MJackson.Discord.Activities.Bot;
 
-namespace MJackson.Discord.Activities.Bot.Activities.RetrieveUserId
+namespace MJackson.Discord.Activities.RetrieveDiscordEntity
 {
     public class RetrieveUserById : CodeActivity
     {

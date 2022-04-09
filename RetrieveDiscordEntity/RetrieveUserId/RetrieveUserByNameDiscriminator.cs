@@ -5,7 +5,7 @@ using System.Linq;
 using Discord;
 using Discord.WebSocket;
 
-namespace MJackson.Discord.Activities.Bot.Activities.RetrieveUserId
+namespace MJackson.Discord.Activities.RetrieveDiscordEntity
 {
     public class RetrieveUserByNameDiscriminator : CodeActivity
     {
