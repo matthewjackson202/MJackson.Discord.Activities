@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Threading.Tasks;
 using Discord;
 
-namespace MJackson.Discord.Activities.Bot.Activities
+namespace MJackson.Discord.Activities.Bot.Activities.RetrieveUserId
 {
     public class RetrieveUserById : CodeActivity
     {
@@ -14,7 +14,7 @@ namespace MJackson.Discord.Activities.Bot.Activities
         public InArgument<string> UserId { get; set; }
 
         [Category("Output")] [RequiredArgument] 
-        public OutArgument<string> FoundUser { get; set; }
+        public OutArgument<string> FoundUserId { get; set; }
 
 
         protected override void Execute(CodeActivityContext context)
@@ -28,7 +28,7 @@ namespace MJackson.Discord.Activities.Bot.Activities
             var userFound = BotHandler.Client.GetUserAsync(userLongId).Result;
             
             // Set the output to the users name. 
-            FoundUser.Set(context, userFound.Username);
+            FoundUserId.Set(context, userFound.Username);
         }
     }
 }

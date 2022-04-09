@@ -119,7 +119,8 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Bot\Activities\RetrieveUserById.cs" />
+        <Compile Include="Bot\Activities\RetrieveUserId\RetrieveUserById.cs" />
+        <Compile Include="Bot\Activities\RetrieveUserId\RetrieveUserByNameDiscriminator.cs" />
         <Compile Include="Bot\BotHandler.cs" />
         <Compile Include="Base.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
