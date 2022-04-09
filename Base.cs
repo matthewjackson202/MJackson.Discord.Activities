@@ -20,11 +20,6 @@ namespace MJackson.Discord.Activities
         [Category("Input")] [RequiredArgument] 
         public InArgument<string> ClientPrefix { get; set; }
 
-        /*
-        [Category("Output")] 
-        public OutArgument<DiscordSocketClient> DiscordClient { get; set; }*/
-
-
         protected override async void Execute(CodeActivityContext context)
         {
             // Get the application token
